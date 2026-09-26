@@ -1,0 +1,169 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-slate-deep: var(--slate-deep);
+  --color-slate-mid: var(--slate-mid);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand Colors */
+  --gold: oklch(0.78 0.12 85);
+  --gold-light: oklch(0.88 0.08 85);
+  --gold-dark: oklch(0.65 0.14 85);
+  --slate-deep: oklch(0.22 0.018 250);
+  --slate-mid: oklch(0.30 0.015 250);
+  --slate-card: oklch(0.27 0.016 250);
+  --slate-border: oklch(0.38 0.012 250);
+
+  /* Semantic Colors - Light mode (warm white sections) */
+  --background: oklch(0.97 0.005 80);
+  --foreground: oklch(0.22 0.018 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.018 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.018 250);
+  --primary: oklch(0.78 0.12 85);
+  --primary-foreground: oklch(0.22 0.018 250);
+  --secondary: oklch(0.93 0.008 250);
+  --secondary-foreground: oklch(0.30 0.015 250);
+  --muted: oklch(0.93 0.005 80);
+  --muted-foreground: oklch(0.52 0.015 250);
+  --accent: oklch(0.78 0.12 85);
+  --accent-foreground: oklch(0.22 0.018 250);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.88 0.008 250);
+  --input: oklch(0.88 0.008 250);
+  --ring: oklch(0.78 0.12 85);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* Gold accent rule under headings */
+  .gold-rule::after {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 2px;
+    background: var(--gold);
+    margin-top: 0.75rem;
+  }
+
+  .gold-rule-center::after {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 2px;
+    background: var(--gold);
+    margin: 0.75rem auto 0;
+  }
+
+  /* Dark slate section */
+  .section-dark {
+    background-color: var(--slate-deep);
+    color: oklch(0.92 0.005 80);
+  }
+
+  .section-slate {
+    background-color: var(--slate-mid);
+    color: oklch(0.92 0.005 80);
+  }
+
+  /* Animated entrance */
+  @media (prefers-reduced-motion: no-preference) {
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1), transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
