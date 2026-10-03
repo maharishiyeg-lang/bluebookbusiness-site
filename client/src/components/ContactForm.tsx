@@ -46,7 +46,7 @@ export default function ContactForm({ service = "", dark = true }: ContactFormPr
       "Message:",
       form.message,
     ].filter(Boolean).join("\n"));
-    window.location.href = `mailto:info@bluebookbusiness.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:bluebookbusiness@gmail.com?subject=${subject}&body=${body}`;
     setSubmitting(false);
     notifyBlueBook(
       "success",

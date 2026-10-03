@@ -28,7 +28,7 @@ function FadeSection({ children, className = "", style = {} }: { children: React
 }
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "info@bluebookbusiness.com", sub: "Response within 1 business day" },
+  { icon: Mail, label: "Email", value: "bluebookbusiness@gmail.com", sub: "Response within 1 business day" },
   { icon: Phone, label: "Phone", value: "587-414-8313", sub: "Mon–Fri, 9am–6pm EST" },
   { icon: MapPin, label: "Location", value: "Remote — Nationwide", sub: "Serving clients across the US" },
   { icon: Clock, label: "Office Hours", value: "Mon–Fri: 9am–6pm", sub: "Sat: By appointment" },

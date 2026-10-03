@@ -3,9 +3,8 @@
 - [x] Replace U.S. W-2 and 1099 references with Canadian T4, T4A, and T5018 wording where relevant.
 - [x] Add clear consultation-fee and signed-contract waiver language.
 - [x] Update every visible phone-number reference to 587-414-8313.
-- [x] Confirm that info@bluebookbusiness.com is the branded contact address shown on the website.
-- [ ] Identify the domain registrar or DNS provider required to forward info@bluebookbusiness.com to bluebookbusiness@gmail.com.
-- [ ] Configure real contact-form delivery after the domain email forwarding is available.
+- [x] Confirm that bluebookbusiness@gmail.com is the contact address shown on the website.
+- [x] Configure contact form handoff through the public Gmail address.
 - [x] Replace separate filing-service cards with a broad filing-support description and example filing types.
 - [x] Change the homepage experience statistic to 15+ years.
 - [x] Add broader filing-support copy with representative Canadian filing examples.

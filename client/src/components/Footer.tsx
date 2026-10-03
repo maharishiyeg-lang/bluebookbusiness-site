@@ -109,7 +109,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Mail size={15} className="mt-0.5 shrink-0" style={{ color: "oklch(0.78 0.12 85)" }} />
                 <span className="text-sm" style={{ color: "oklch(0.62 0.01 250)" }}>
-                  info@bluebookbusiness.com
+                  bluebookbusiness@gmail.com
                 </span>
               </li>
               <li className="flex items-start gap-3">
